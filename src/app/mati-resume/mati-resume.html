@@ -1,0 +1,168 @@
+<div class="resume">
+
+  <nav class="nav resume-nav">
+    <div class="nav-brand">MFP</div>
+    <a href="#resumen">{{ t().navResumen }}</a>
+    <a href="#experiencia">{{ t().navExperiencia }}</a>
+    <a href="#educacion">{{ t().navEducacion }}</a>
+    <a href="#habilidades">{{ t().navHabilidades }}</a>
+    <a href="#tecnologias">{{ t().navTecnologias }}</a>
+    <div class="seg" style="margin-left:auto">
+      <label class="seg-opt">
+        <input type="radio" name="lang" [checked]="lang() === 'es'" (change)="setLang('es')">
+        <span class="dot"></span>ES
+      </label>
+      <label class="seg-opt">
+        <input type="radio" name="lang" [checked]="lang() === 'en'" (change)="setLang('en')">
+        <span class="dot"></span>EN
+      </label>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="resume-hero">
+    <div class="resume-hero-inner">
+      <div class="blueprint resume-photo-frame">
+        <i class="corner tl"></i>
+        <i class="corner tr"></i>
+        <i class="corner bl"></i>
+        <i class="corner br"></i>
+        <div class="resume-photo-wrap">
+          <img src="images/mati-photo.jpg" alt="Matías Fuentes Pérez" class="resume-photo">
+        </div>
+      </div>
+      <div>
+        <h6 class="resume-hero-kicker">{{ t().heroKicker }}</h6>
+        <h1 class="resume-hero-name">Matías Fuentes Pérez</h1>
+        <p class="resume-hero-title">{{ t().heroTitle }}</p>
+        <div class="resume-hero-meta">
+          <span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            Santiago, Chile
+          </span>
+          <span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+            +56 9 9229 1862
+          </span>
+          <a href="mailto:matias.fuentes.p@hotmail.com">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+            matias.fuentes.p@hotmail.com
+          </a>
+          <a href="https://linkedin.com/in/matias-fuentes-perez">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            linkedin.com/in/matias-fuentes-perez
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- STAT STRIP -->
+  <section class="resume-section resume-stats" data-reveal>
+    <div class="resume-stats-grid">
+      @for (s of t().stats; track $index) {
+        <div class="resume-stat">
+          <div class="resume-stat-label">{{ s.label }}</div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- RESUMEN -->
+  <section id="resumen" class="resume-section" data-reveal>
+    <h6 class="resume-section-label">{{ t().resumenLabel }}</h6>
+    <p class="resume-summary">{{ t().resumen }}</p>
+  </section>
+
+  <!-- EXPERIENCIA -->
+  <section id="experiencia" class="resume-section resume-section--tight">
+    <h6 class="resume-section-label resume-section-label--spaced">{{ t().experienciaLabel }}</h6>
+    @for (job of t().experience; track $index) {
+      <div class="tl-item resume-job" data-reveal>
+        <div class="resume-job-rail">
+          <div class="resume-job-dot"></div>
+          <div class="tl-line"></div>
+        </div>
+        <div class="blueprint resume-job-card">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div class="resume-job-header">
+            <div>
+              <h4 class="resume-job-role">{{ job.role }}</h4>
+              <div class="resume-job-company">{{ job.company }}</div>
+            </div>
+            <div class="resume-job-meta">
+              <div>{{ job.dates }}</div>
+              <div>{{ job.place }}</div>
+            </div>
+          </div>
+          <ul class="resume-job-bullets">
+            @for (b of job.bullets; track $index) {
+              <li>{{ b }}</li>
+            }
+          </ul>
+          @if (job.proyectos) {
+            <p class="resume-job-projects"><strong>{{ t().proyectosLabel }} </strong>{{ job.proyectos }}</p>
+          }
+        </div>
+      </div>
+    }
+  </section>
+
+  <!-- EDUCACION -->
+  <section id="educacion" class="resume-section" data-reveal>
+    <h6 class="resume-section-label resume-section-label--spaced">{{ t().educacionLabel }}</h6>
+    <div class="resume-education-grid">
+      @for (ed of t().education; track $index) {
+        <div class="blueprint resume-edu-card">
+          <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
+          <div class="resume-edu-row">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="resume-edu-icon"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+            <div>
+              <h5 class="resume-edu-title">{{ ed.title }}</h5>
+              <div class="resume-edu-school">{{ ed.school }}</div>
+              <div class="resume-edu-dates">{{ ed.dates }}</div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="habilidades" class="resume-section" data-reveal>
+    <h6 class="resume-section-label resume-section-label--spaced">{{ t().habilidadesLabel }}</h6>
+    <div class="resume-tags">
+      @for (sk of t().skills; track $index) {
+        <span class="tag tag-outline">{{ sk }}</span>
+      }
+    </div>
+  </section>
+
+  <!-- TECNOLOGIAS -->
+  <section id="tecnologias" class="resume-section resume-section--wide" data-reveal>
+    <h6 class="resume-section-label resume-section-label--spaced">{{ t().tecnologiasLabel }}</h6>
+    <div class="resume-tech-grid">
+      @for (grp of t().techGroups; track $index) {
+        <div>
+          <div class="resume-tech-group-title">{{ grp.title }}</div>
+          <div class="resume-tags">
+            @for (item of grp.items; track $index) {
+              <span class="tag tag-accent">{{ item }}</span>
+            }
+          </div>
+        </div>
+      }
+    </div>
+    <div class="resume-languages">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="resume-languages-icon"><path d="m5 8 6 6"></path><path d="m4 14 6-6 2-3"></path><path d="M2 5h12"></path><path d="M7 2h1"></path><path d="m22 22-5-10-5 10"></path><path d="M14 18h6"></path></svg>
+      <div class="resume-languages-list">
+        @for (line of t().languagesLine; track $index) {
+          <span>{{ line }}</span>
+        }
+      </div>
+    </div>
+  </section>
+
+  <footer class="resume-footer">Matías Fuentes Pérez — Santiago, Chile</footer>
+
+</div>
