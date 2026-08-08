@@ -60,7 +60,7 @@
   <!-- STAT STRIP -->
   <section class="resume-section resume-stats" data-reveal>
     <div class="resume-stats-grid">
-      @for (s of t().stats; track s.label) {
+      @for (s of t().stats; track $index) {
         <div class="resume-stat">
           <div class="resume-stat-label">{{ s.label }}</div>
         </div>
@@ -77,7 +77,7 @@
   <!-- EXPERIENCIA -->
   <section id="experiencia" class="resume-section resume-section--tight">
     <h6 class="resume-section-label resume-section-label--spaced">{{ t().experienciaLabel }}</h6>
-    @for (job of t().experience; track job.company + job.dates) {
+    @for (job of t().experience; track $index) {
       <div class="tl-item resume-job" data-reveal>
         <div class="resume-job-rail">
           <div class="resume-job-dot"></div>
@@ -96,7 +96,7 @@
             </div>
           </div>
           <ul class="resume-job-bullets">
-            @for (b of job.bullets; track b) {
+            @for (b of job.bullets; track $index) {
               <li>{{ b }}</li>
             }
           </ul>
@@ -112,7 +112,7 @@
   <section id="educacion" class="resume-section" data-reveal>
     <h6 class="resume-section-label resume-section-label--spaced">{{ t().educacionLabel }}</h6>
     <div class="resume-education-grid">
-      @for (ed of t().education; track ed.title) {
+      @for (ed of t().education; track $index) {
         <div class="blueprint resume-edu-card">
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
           <div class="resume-edu-row">
@@ -132,7 +132,7 @@
   <section id="habilidades" class="resume-section" data-reveal>
     <h6 class="resume-section-label resume-section-label--spaced">{{ t().habilidadesLabel }}</h6>
     <div class="resume-tags">
-      @for (sk of t().skills; track sk) {
+      @for (sk of t().skills; track $index) {
         <span class="tag tag-outline">{{ sk }}</span>
       }
     </div>
@@ -142,11 +142,11 @@
   <section id="tecnologias" class="resume-section resume-section--wide" data-reveal>
     <h6 class="resume-section-label resume-section-label--spaced">{{ t().tecnologiasLabel }}</h6>
     <div class="resume-tech-grid">
-      @for (grp of t().techGroups; track grp.title) {
+      @for (grp of t().techGroups; track $index) {
         <div>
           <div class="resume-tech-group-title">{{ grp.title }}</div>
           <div class="resume-tags">
-            @for (item of grp.items; track item) {
+            @for (item of grp.items; track $index) {
               <span class="tag tag-accent">{{ item }}</span>
             }
           </div>
