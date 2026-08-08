@@ -5,6 +5,7 @@ export interface ResumeJob {
   dates: string;
   bullets: string[];
   proyectos: string | null;
+  isPersonalProject?: boolean;
 }
 
 export interface ResumeEducation {
@@ -58,6 +59,14 @@ export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
     experienciaLabel: 'Experiencia',
     proyectosLabel: 'Proyectos:',
     experience: [
+      {
+        role: 'Planificador de Viajes con IA (tripilove.com)', company: 'Proyecto Personal', place: 'Santiago, Chile', dates: '2026',
+        bullets: [
+          'Diseñé y desarrollé TripiLove (tripilove.com), un planificador de viajes personal impulsado por IA, integrado con Deepseek para recomendar las mejores atracciones turísticas en cada viaje.',
+          'Implementé una arquitectura de microservicios con Angular v20 y Node.js, con PostgreSQL y Redis para la persistencia de datos, desplegada en Vercel bajo un modelo serverless.',
+          'Desarrollé el proyecto íntegramente con Claude Code siguiendo la metodología Spec-Driven Development, utilizando agentes para la definición de nuevas features, el desarrollo de componentes y QA en cada despliegue, manteniendo un modelo Human-in-the-loop para despliegues seguros.'
+        ], proyectos: null, isPersonalProject: true
+      },
       {
         role: 'Software Project Leader', company: 'Mercado Libre', place: 'Santiago, Chile', dates: 'Jun 2025 – Nov 2025',
         bullets: [
@@ -138,6 +147,14 @@ export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
     experienciaLabel: 'Experience',
     proyectosLabel: 'Projects:',
     experience: [
+      {
+        role: 'AI Travel Planner (tripilove.com)', company: 'Personal Project', place: 'Santiago, Chile', dates: '2026',
+        bullets: [
+          'Designed and built TripiLove (tripilove.com), a personal AI-powered travel planner integrated with Deepseek to recommend the best attractions for every trip.',
+          'Implemented a microservices architecture with Angular v20 and Node.js, backed by PostgreSQL and Redis for data persistence, deployed on Vercel as serverless.',
+          'Built the project entirely with Claude Code following Spec-Driven Development methodology, using agents for feature definition, component development, and QA on every deployment, maintaining a human-in-the-loop model for safe releases.'
+        ], proyectos: null, isPersonalProject: true
+      },
       {
         role: 'Software Project Leader', company: 'Mercado Libre', place: 'Santiago, Chile', dates: 'Jun 2025 – Nov 2025',
         bullets: [
