@@ -38,7 +38,7 @@ export interface ResumeContent {
   skills: string[];
   tecnologiasLabel: string;
   techGroups: ResumeTechGroup[];
-  languagesLine: string;
+  languagesLine: string[];
 }
 
 export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
@@ -120,7 +120,7 @@ export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
       { title: 'DevOps / Cloud / Observabilidad', items: ['GitLab-CI', 'Docker', 'Terraform', 'Portainer', 'Cloudflare', 'GCP', 'AWS', 'Datadog', 'Looker', 'Fury'] },
       { title: 'IA', items: ['Claude Code', 'Cursor', 'Windsurf'] }
     ],
-    languagesLine: 'Español: Nativo   |   Inglés: Nivel Avanzado (C1)'
+    languagesLine: ['Español: Nativo', 'Inglés: Nivel Avanzado (C1)']
   },
   en: {
     navResumen: 'Summary', navExperiencia: 'Experience', navEducacion: 'Education',
@@ -200,6 +200,6 @@ export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
       { title: 'DevOps / Cloud / Observability', items: ['GitLab-CI', 'Docker', 'Terraform', 'Portainer', 'Cloudflare', 'GCP', 'AWS', 'Datadog', 'Looker', 'Fury'] },
       { title: 'AI', items: ['Claude Code', 'Cursor', 'Windsurf'] }
     ],
-    languagesLine: 'Spanish: Native   |   English: Advanced (C1)'
+    languagesLine: ['Spanish: Native', 'English: Advanced (C1)']
   }
 };

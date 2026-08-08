@@ -124,10 +124,11 @@
 .resume-tech-grid .resume-tags { gap: 6px; }
 .resume-languages {
   margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--color-divider);
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: flex-start; gap: 10px;
 }
-.resume-languages-icon { color: var(--color-accent); }
-.resume-languages span { font-size: 14px; }
+.resume-languages-icon { color: var(--color-accent); flex: none; margin-top: 2px; }
+.resume-languages-list { display: flex; flex-direction: column; gap: 4px; }
+.resume-languages-list span { font-size: 14px; }
 
 /* — footer — */
 .resume-footer {
