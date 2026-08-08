@@ -10,11 +10,15 @@ export function buildResumeTitle(content: ResumeContent): string {
 }
 
 export function buildResumeStructuredData(content: ResumeContent): object {
+  // jobTitle/worksFor should reflect a real employer, not a personal project.
+  const primaryJob =
+    content.experience.find((job) => !job.isPersonalProject) ?? content.experience[0];
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: PERSON_NAME,
-    jobTitle: content.experience[0]?.role,
+    jobTitle: primaryJob?.role,
     description: content.resumen,
     email: `mailto:${PERSON_EMAIL}`,
     telephone: PERSON_PHONE,
@@ -25,8 +29,8 @@ export function buildResumeStructuredData(content: ResumeContent): object {
     },
     sameAs: [LINKEDIN_URL],
     knowsLanguage: ['es', 'en'],
-    worksFor: content.experience[0]
-      ? { '@type': 'Organization', name: content.experience[0].company }
+    worksFor: primaryJob
+      ? { '@type': 'Organization', name: primaryJob.company }
       : undefined,
     alumniOf: content.education.map((ed) => ({
       '@type': 'EducationalOrganization',
