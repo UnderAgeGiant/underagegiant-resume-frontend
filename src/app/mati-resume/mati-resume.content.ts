@@ -1,5 +1,13 @@
+export interface ResumeRoleLink {
+  before: string;
+  label: string;
+  url: string;
+  after: string;
+}
+
 export interface ResumeJob {
   role: string;
+  roleLink?: ResumeRoleLink;
   company: string;
   place: string;
   dates: string;
@@ -60,7 +68,12 @@ export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
     proyectosLabel: 'Proyectos:',
     experience: [
       {
-        role: 'Planificador de Viajes con IA (tripilove.com)', company: 'Proyecto Personal', place: 'Santiago, Chile', dates: '2026',
+        role: 'Owner tripilove.com - Planificador de Viajes con IA',
+        roleLink: {
+          before: 'Owner ', label: 'tripilove.com', url: 'https://www.tripilove.com',
+          after: ' - Planificador de Viajes con IA'
+        },
+        company: 'Proyecto Personal', place: 'Santiago, Chile', dates: '2026',
         bullets: [
           'Diseñé y desarrollé TripiLove (tripilove.com), un planificador de viajes personal impulsado por IA, integrado con Deepseek para recomendar las mejores atracciones turísticas en cada viaje.',
           'Implementé una arquitectura de microservicios con Angular v20 y Node.js, con PostgreSQL y Redis para la persistencia de datos, desplegada en Vercel bajo un modelo serverless.',
@@ -148,7 +161,12 @@ export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
     proyectosLabel: 'Projects:',
     experience: [
       {
-        role: 'AI Travel Planner (tripilove.com)', company: 'Personal Project', place: 'Santiago, Chile', dates: '2026',
+        role: 'Owner tripilove.com - AI Travel Planner',
+        roleLink: {
+          before: 'Owner ', label: 'tripilove.com', url: 'https://www.tripilove.com',
+          after: ' - AI Travel Planner'
+        },
+        company: 'Personal Project', place: 'Santiago, Chile', dates: '2026',
         bullets: [
           'Designed and built TripiLove (tripilove.com), a personal AI-powered travel planner integrated with Deepseek to recommend the best attractions for every trip.',
           'Implemented a microservices architecture with Angular v20 and Node.js, backed by PostgreSQL and Redis for data persistence, deployed on Vercel as serverless.',

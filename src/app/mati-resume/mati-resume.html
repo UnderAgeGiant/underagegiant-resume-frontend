@@ -87,7 +87,13 @@
           <i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i>
           <div class="resume-job-header">
             <div>
-              <h4 class="resume-job-role">{{ job.role }}</h4>
+              <h4 class="resume-job-role">
+                @if (job.roleLink) {
+                  {{ job.roleLink.before }}<a [href]="job.roleLink.url" target="_blank" rel="noopener noreferrer">{{ job.roleLink.label }}</a>{{ job.roleLink.after }}
+                } @else {
+                  {{ job.role }}
+                }
+              </h4>
               <div class="resume-job-company">{{ job.company }}</div>
             </div>
             <div class="resume-job-meta">
