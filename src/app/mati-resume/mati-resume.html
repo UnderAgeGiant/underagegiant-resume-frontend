@@ -7,6 +7,7 @@
     <a href="#educacion">{{ t().navEducacion }}</a>
     <a href="#habilidades">{{ t().navHabilidades }}</a>
     <a href="#tecnologias">{{ t().navTecnologias }}</a>
+    <a href="#hobbies">{{ t().navHobbies }}</a>
     <div class="seg" style="margin-left:auto">
       <label class="seg-opt">
         <input type="radio" name="lang" [checked]="lang() === 'es'" (change)="setLang('es')">
@@ -145,7 +146,7 @@
   </section>
 
   <!-- TECNOLOGIAS -->
-  <section id="tecnologias" class="resume-section resume-section--wide" data-reveal>
+  <section id="tecnologias" class="resume-section" data-reveal>
     <h6 class="resume-section-label resume-section-label--spaced">{{ t().tecnologiasLabel }}</h6>
     <div class="resume-tech-grid">
       @for (grp of t().techGroups; track $index) {
@@ -164,6 +165,19 @@
       <div class="resume-languages-list">
         @for (line of t().languagesLine; track $index) {
           <span>{{ line }}</span>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- HOBBIES -->
+  <section id="hobbies" class="resume-section resume-section--wide" data-reveal>
+    <h6 class="resume-section-label resume-section-label--spaced">{{ t().hobbiesLabel }}</h6>
+    <div class="resume-hobbies">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="resume-hobbies-icon"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path></svg>
+      <div class="resume-hobbies-list">
+        @for (hb of t().hobbies; track $index) {
+          <span>{{ hb }}</span>
         }
       </div>
     </div>

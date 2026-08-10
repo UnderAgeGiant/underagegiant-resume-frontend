@@ -33,6 +33,7 @@ export interface ResumeContent {
   navEducacion: string;
   navHabilidades: string;
   navTecnologias: string;
+  navHobbies: string;
   heroKicker: string;
   heroTitle: string;
   stats: { label: string }[];
@@ -48,12 +49,14 @@ export interface ResumeContent {
   tecnologiasLabel: string;
   techGroups: ResumeTechGroup[];
   languagesLine: string[];
+  hobbiesLabel: string;
+  hobbies: string[];
 }
 
 export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
   es: {
     navResumen: 'Resumen', navExperiencia: 'Experiencia', navEducacion: 'Educación',
-    navHabilidades: 'Habilidades', navTecnologias: 'Tecnologías',
+    navHabilidades: 'Habilidades', navTecnologias: 'Tecnologías', navHobbies: 'Hobbies',
     heroKicker: 'Curriculum Vitae',
     heroTitle: 'Software Engineering Manager — Liderazgo de Equipos de Ingeniería y Entrega de Producto',
     stats: [
@@ -142,11 +145,13 @@ export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
       { title: 'DevOps / Cloud / Observabilidad', items: ['GitLab-CI', 'Docker', 'Terraform', 'Portainer', 'Cloudflare', 'GCP', 'AWS', 'Datadog', 'Looker', 'Fury'] },
       { title: 'IA', items: ['Claude Code', 'Cursor', 'Windsurf'] }
     ],
-    languagesLine: ['Español: Nativo', 'Inglés: Nivel Avanzado (C1)']
+    languagesLine: ['Español: Nativo', 'Inglés: Nivel Avanzado (C1)'],
+    hobbiesLabel: 'Hobbies',
+    hobbies: ['Viajar y conocer el mundo', 'Natación en aguas abiertas', 'Juegos de mesa', 'Boxeo']
   },
   en: {
     navResumen: 'Summary', navExperiencia: 'Experience', navEducacion: 'Education',
-    navHabilidades: 'Skills', navTecnologias: 'Technologies',
+    navHabilidades: 'Skills', navTecnologias: 'Technologies', navHobbies: 'Hobbies',
     heroKicker: 'Resume',
     heroTitle: 'Software Engineering Manager — Engineering Team Leadership & Product Delivery',
     stats: [
@@ -235,6 +240,8 @@ export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
       { title: 'DevOps / Cloud / Observability', items: ['GitLab-CI', 'Docker', 'Terraform', 'Portainer', 'Cloudflare', 'GCP', 'AWS', 'Datadog', 'Looker', 'Fury'] },
       { title: 'AI', items: ['Claude Code', 'Cursor', 'Windsurf'] }
     ],
-    languagesLine: ['Spanish: Native', 'English: Advanced (C1)']
+    languagesLine: ['Spanish: Native', 'English: Advanced (C1)'],
+    hobbiesLabel: 'Hobbies',
+    hobbies: ['Traveling and exploring the world', 'Open water swimming', 'Board games', 'Boxing']
   }
 };

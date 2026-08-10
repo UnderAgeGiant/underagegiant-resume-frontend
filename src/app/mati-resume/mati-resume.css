@@ -66,7 +66,7 @@
 .resume-section { max-width: 960px; margin: 0 auto; padding: 56px 24px; }
 .resume-section--tight { padding: 0 24px 56px; }
 .resume-section--wide { padding: 0 24px 72px; }
-#educacion, #habilidades { padding: 0 24px 56px; }
+#educacion, #habilidades, #tecnologias { padding: 0 24px 56px; }
 .resume-section-label { color: var(--color-accent-700); }
 .resume-section-label--spaced { margin-bottom: var(--space-6); }
 .resume-summary { font-size: 16px; line-height: 1.7; color: var(--color-neutral-800); text-align: justify; }
@@ -129,6 +129,12 @@
 .resume-languages-icon { color: var(--color-accent); flex: none; margin-top: 2px; }
 .resume-languages-list { display: flex; flex-direction: column; gap: 4px; }
 .resume-languages-list span { font-size: 14px; }
+
+/* — hobbies — */
+.resume-hobbies { display: flex; align-items: flex-start; gap: 10px; }
+.resume-hobbies-icon { color: var(--color-accent); flex: none; margin-top: 2px; }
+.resume-hobbies-list { display: flex; flex-direction: column; gap: 4px; }
+.resume-hobbies-list span { font-size: 14px; }
 
 /* — footer — */
 .resume-footer {
