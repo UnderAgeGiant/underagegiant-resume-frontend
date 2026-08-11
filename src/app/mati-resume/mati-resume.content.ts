@@ -34,6 +34,8 @@ export interface ResumeContent {
   navHabilidades: string;
   navTecnologias: string;
   navHobbies: string;
+  downloadLabel: string;
+  downloadFile: string;
   heroKicker: string;
   heroTitle: string;
   stats: { label: string }[];
@@ -57,6 +59,8 @@ export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
   es: {
     navResumen: 'Resumen', navExperiencia: 'Experiencia', navEducacion: 'Educación',
     navHabilidades: 'Habilidades', navTecnologias: 'Tecnologías', navHobbies: 'Hobbies',
+    downloadLabel: 'Descargar CV',
+    downloadFile: '20260810_SEM_MatiasFuentesPerez.pdf',
     heroKicker: 'Curriculum Vitae',
     heroTitle: 'Software Engineering Manager — Liderazgo de Equipos de Ingeniería y Entrega de Producto',
     stats: [
@@ -152,6 +156,8 @@ export const RESUME_CONTENT: Record<'es' | 'en', ResumeContent> = {
   en: {
     navResumen: 'Summary', navExperiencia: 'Experience', navEducacion: 'Education',
     navHabilidades: 'Skills', navTecnologias: 'Technologies', navHobbies: 'Hobbies',
+    downloadLabel: 'Download resume',
+    downloadFile: '20260810_English_SEM_MatiasFuentesPerez.pdf',
     heroKicker: 'Resume',
     heroTitle: 'Software Engineering Manager — Engineering Team Leadership & Product Delivery',
     stats: [
